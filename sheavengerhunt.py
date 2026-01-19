@@ -7,17 +7,13 @@ import time
 # --- 1. CONFIGURATION ---
 st.set_page_config(page_title="The Invasion", page_icon="🏆", layout="centered")
 
-# --- 2. SECURITY CSS (Hides the GitHub Link) ---
+# --- 2. SECURITY CSS (Hides GitHub Menu & Footer) ---
 st.markdown("""
     <style>
-    /* Hide the Streamlit Hamburger Menu (Top Right) */
     #MainMenu {visibility: hidden;}
-    /* Hide the 'Made with Streamlit' Footer */
     footer {visibility: hidden;}
-    /* Hide the header line */
     header {visibility: hidden;}
     
-    /* Your existing Dark Mode CSS */
     .stApp { background-color: #0e1117; color: #e0e0e0; }
     .stTextInput > div > div > input { 
         text-align: center; text-transform: uppercase; 
@@ -68,8 +64,7 @@ def send_notification(stage_name):
         except:
             pass
 
-# --- 5. GAME DATA (Passwords Removed!) ---
-# Notice: 'password' is now looking up st.secrets, not a hardcoded string
+# --- 5. GAME DATA (Passwords Hidden in Secrets) ---
 stages = [
     {"title": "THE CHALLENGE", "key": "intro", "clue": "Type ACCEPT to start."},
     {"title": "MATCH 1: THE TRAINING", "key": "gym", "clue": "Go to the Gym. Find the treadmill."},
@@ -80,11 +75,14 @@ stages = [
 ]
 
 # --- 6. APP LOGIC ---
+
+# 1. Sync with Cloud
 global_stage = get_global_stage()
 
 if "stage" not in st.session_state:
     st.session_state.stage = global_stage
 elif global_stage > st.session_state.stage:
+    # If cloud is ahead, force update local
     st.session_state.stage = global_stage
     st.rerun()
 
@@ -106,6 +104,7 @@ else:
     st.subheader(current["title"])
     st.markdown(current["clue"])
     
+    # Manual Refresh Button
     if st.button("🔄 Sync Progress"):
         st.rerun()
     
@@ -114,15 +113,14 @@ else:
         submit = st.form_submit_button("SUBMIT")
         
         if submit:
-            # LOOK UP PASSWORD IN SECRETS INSTEAD OF CODE
-            # This is the line that makes it hack-proof
+            # CHECK PASSWORD AGAINST SECRETS (Cheat-Proof)
             correct_password = st.secrets["passwords"][current["key"]]
             
             if user_input.strip().upper() == correct_password:
                 new_stage = st.session_state.stage + 1
-                update_global_stage(new_stage)
-                send_notification(current["title"])
-                time.sleep(1)
+                update_global_stage(new_stage) # Save to cloud
+                send_notification(current["title"]) # Email you
+                time.sleep(1) 
                 st.rerun()
             else:
                 st.error("INCORRECT PASSWORD.")
