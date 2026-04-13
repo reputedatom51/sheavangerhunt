@@ -68,7 +68,7 @@ def send_notification(stage_name):
 
 # --- 5. GAME DATA ---
 stages = [
-    {"title": "Reclaim Your Title", "key": "intro", "clue": "Find 6 Opponents to Earn Your Title Match. Type "Accept" to Continue"},
+    {"title": "Reclaim Your Title", "key": "intro", "clue": "Find 6 Opponents to Earn Your Title Match. Type Accept to Continue"},
     {"title": "MATCH 1", "key": "DJ", "clue": "Start by finding Bethel’s most popular tag team, maybe known as DJ."},
     {"title": "MATCH 2", "key": "Mikiah", "clue": "Next find certain individual who watches your kids and now resides over plenty of her own “children” on the hill might"},
     {"title": "MATCH 3", "key": "Kyle", "clue": "Now find a former L3 resident who has climbed in ranks, but dropped in floors."},
