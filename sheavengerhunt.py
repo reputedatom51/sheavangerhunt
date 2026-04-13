@@ -74,7 +74,7 @@ stages = [
     {"title": "MATCH 3", "key": "Kyle", "clue": "Now find a former L3 resident who has climbed in ranks, but dropped in floors."},
     {"title": "MATCH 4", "key": "Tyler", "clue": "Next find a 3-time RA, yet younger than the seniors."},
     {"title": "Match 5", "key": "Dylan", "clue": "Find your Solo Sikoa."},
-    {"title": "Match 6", "key": "Lexi", "clue": "Check with a former Lissner RA but dig deep to figure out who they are."},
+    {"title": "Match 6", "key": "Lexi", "clue": "Find our favorite formerly blonde friend who broke her foot falling down a single step."},
     {"title": "Match 7", "key": "Sarah", "clue": "Find a former Lissner RA but dig deep to figure out who they are."},
 ]
 
