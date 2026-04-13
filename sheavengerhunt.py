@@ -68,12 +68,14 @@ def send_notification(stage_name):
 
 # --- 5. GAME DATA ---
 stages = [
-    {"title": "THE CHALLENGE", "key": "intro", "clue": "Type ACCEPT to start."},
-    {"title": "MATCH 1: THE TRAINING", "key": "gym", "clue": "Go to the Gym. Find the treadmill."},
-    {"title": "MATCH 2: THE MOLE", "key": "resident", "clue": "Find the resident in Room 204."},
-    {"title": "MATCH 3: THE TAPE STUDY", "key": "library", "clue": "Find the book 'Leadership 101'."},
-    {"title": "MATCH 4: MANAGEMENT", "key": "rd", "clue": "Go find my RD."},
-    {"title": "MAIN EVENT: THE GHOST", "key": "jterm", "clue": "It is with a former RA."}
+    {"title": "Reclaim Your Title", "key": "intro", "clue": "Find 6 Opponents to Earn Your Title Match. Type "Accept" to Continue"},
+    {"title": "MATCH 1", "key": "DJ", "clue": "Start by finding Bethel’s most popular tag team, maybe known as DJ."},
+    {"title": "MATCH 2", "key": "Mikiah", "clue": "Next find certain individual who watches your kids and now resides over plenty of her own “children” on the hill might"},
+    {"title": "MATCH 3", "key": "Kyle", "clue": "Now find a former L3 resident who has climbed in ranks, but dropped in floors."},
+    {"title": "MATCH 4", "key": "Tyler", "clue": "Next find a 3-time RA, yet younger than the seniors."},
+    {"title": "Match 5", "key": "Dylan", "clue": "Find your Solo Sikoa."}
+    {"title": "Match 6", "key": "Lexi", "clue": "Check with a former Lissner RA but dig deep to figure out who they are."."}
+    {"title": "Match 7", "key": "Sarah", "clue": "Find a former Lissner RA but dig deep to figure out who they are."}
 ]
 
 # --- 6. APP LOGIC ---
@@ -95,8 +97,8 @@ st.title("THE INVASION")
 
 if st.session_state.stage >= len(stages):
     st.balloons()
-    st.success("🏆 CHAMPION! 🏆")
-    st.write(f"Go claim your prize at **{st.secrets['locations']['final']}**.")
+    st.success("The Final Boss")
+    st.write(f"Your Title Match is scheduled for Sunday. Be prepared, my tribal chief.")
     
     if st.button("Reset Game (Global)"):
         update_global_stage(0)
