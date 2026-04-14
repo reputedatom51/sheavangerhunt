@@ -70,12 +70,12 @@ def send_notification(stage_name):
 stages = [
     {"title": "Reclaim Your Title", "key": "intro", "clue": "Find 6 Opponents to Earn Your Title Match. Type Accept to Continue"},
     {"title": "MATCH 1", "key": "DJ", "clue": "Start by finding Bethel’s most popular tag team, maybe known as DJ."},
-    {"title": "MATCH 2", "key": "Mikiah", "clue": "Next find certain individual who watches your kids and now resides over plenty of her own “children” on the hill might"},
+    {"title": "MATCH 2", "key": "Mikiah", "clue": "Next find a certain individual who watches your kids and now resides over plenty of her own “children” on the hill."},
     {"title": "MATCH 3", "key": "Kyle", "clue": "Now find a former L3 resident who has climbed in ranks, but dropped in floors."},
     {"title": "MATCH 4", "key": "Tyler", "clue": "Next find a 3-time RA, yet younger than the seniors."},
     {"title": "Match 5", "key": "Dylan", "clue": "Find your Solo Sikoa."},
-    {"title": "Match 6", "key": "Lexi", "clue": "Find our favorite formerly blonde friend who broke her foot falling down a single step."},
-    {"title": "Match 7", "key": "Sarah", "clue": "Find a former Lissner RA but dig deep to figure out who they are."},
+    {"title": "Match 6", "key": "Lexi", "clue": "Now, find your longest tenured resident."},
+    {"title": "Match 7", "key": "Sarah", "clue": "Lastly, find a former Lissner RA but dig deep to figure out who they are."},
 ]
 
 # --- 6. APP LOGIC ---
