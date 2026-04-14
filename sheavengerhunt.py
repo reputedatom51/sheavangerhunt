@@ -7,6 +7,7 @@ import random
 
 # --- 1. CONFIGURATION ---
 st.set_page_config(page_title="The Invasion", page_icon="🏆", layout="centered")
+st.info("Email all hint requests to reputedatom51@gmail.com")
 
 # --- 2. SECURITY CSS ---
 st.markdown("""
